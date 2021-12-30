@@ -60,11 +60,5 @@ def G_search(search_words):
         result = pd.concat([result, tmp_df], axis=1)
     c_path = os.getcwd()
     # os.remove(c_path + "/flask_blog/add/DL_BOX/result.xlsx")
-    result.to_excel(c_path + "/flask_blog/add/DL_BOX/result.xlsx")
+    result.to_csv("result.csv", encoding="utf-8")
     return "完了しました"
-
-
-
-# def test(search_words):
-    
-#     return search_words[1]

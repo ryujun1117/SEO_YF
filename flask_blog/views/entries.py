@@ -1,8 +1,11 @@
-from flask import request, redirect, url_for, render_template, flash, session, send_from_directory, send_file
+from functools import _make_key
+from flask import request, redirect, url_for, render_template, flash, session, send_from_directory, send_file,Response, make_response
+
 from flask_blog import app
 from datetime import datetime
 import os
 from flask_blog.add import get_info
+
 
 @app.route("/", methods=["GET"])
 def show_entry():
@@ -35,12 +38,8 @@ def get_infomation():
 
 @app.route("/entries/show")
 def download_api():
-    path = os.path.abspath(__file__)[:-14]
-    return send_file(
-        directory = path + '/flask_blog/add/DL_BOX',
-        filename = "result.xlsx",
-        as_attachment=True, 
-        attachment_filename= "result.xlsx",
-        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
-
+    response = make_response()
+    response.data = open("result.csv", encoding ="utf-8", errors="ignore").read()
+    response.headers['Content-Type'] = 'application/octet-stream'
+    response.headers['Content-Disposition'] = 'attachment; filename=result.csv'
+    return response
