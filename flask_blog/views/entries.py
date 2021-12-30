@@ -1,7 +1,6 @@
 from flask import request, redirect, url_for, render_template, flash, session, send_from_directory, send_file
 from flask_blog import app
 from datetime import datetime
-from flask_blog.add import add_pandas
 import os
 from flask_blog.add import get_info
 
