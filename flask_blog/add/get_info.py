@@ -17,7 +17,7 @@ def search_task(search_words):
         # Googleから検索結果ページを取得する
         url = f'https://www.google.co.jp/search?hl=ja&num={pages_num}&q={search_word}'
         request = requests.get(url)
-        time.sleep(10)
+        time.sleep(5)
         # Googleのページ解析を行う
         soup = BeautifulSoup(request.text, "html.parser")
         search_site_list = soup.select('div.kCrYT > a')
