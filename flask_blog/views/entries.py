@@ -35,8 +35,7 @@ def get_infomation():
 
 @app.route("/entries/show", methods=["GET"])
 def download_api():
-    c_path = os.getcwd()
-    filepath = c_path + "/flask_blog/add/DL_BOX/result.xlsx"
+    filepath = "./flask_blog/add/DL_BOX/result.xlsx"
     filename = os.path.basename(filepath)
     return send_file(filepath,as_attachment=True, attachment_filename= filename,  mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
