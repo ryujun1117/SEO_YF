@@ -33,9 +33,14 @@ def get_infomation():
     entry = get_info.G_search(search_words)
     return render_template("entries/pandas.html",entry = entry)
 
-@app.route("/entries/show", methods=["GET"])
+@app.route("/entries/show")
 def download_api():
-    filepath = "./flask_blog/add/DL_BOX/result.xlsx"
-    filename = os.path.basename(filepath)
-    return send_file(filepath,as_attachment=True, attachment_filename= filename,  mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    path = os.path.abspath(__file__)[:-14]
+    return send_file(
+        directory = path + '/flask_blog/add/DL_BOX',
+        filename = "result.xlsx",
+        as_attachment=True, 
+        attachment_filename= "result.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
 
