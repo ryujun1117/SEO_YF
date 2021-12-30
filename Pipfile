@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 flask = "==1.1.2"
+beautifulsoup4 = "*"
+gunicorn = "*"
+pandas = "*"
+openpyxl = "*"
+requests = "*"
 
 [dev-packages]
 
