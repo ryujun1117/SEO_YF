@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <h2>{{entry.title}}</h2>
+        <br>{{entry.text|safe}}
+        <br>
+        <br>
+        <br>
+        <form action="{{url_for('get_infomation')}}" method=post>
+            <div class="form-group">
+                <label for ="InputTitle">◇検索ワード</label>
+                <input type="text" class="form-control" id="InputWord_1" name=word_1>
+                <input type="text" class="form-control" id="InputWord_2" name=word_2>
+                <input type="text" class="form-control" id="InputWord_3" name=word_3>
+                <input type="text" class="form-control" id="InputWord_4" name=word_4>
+                <input type="text" class="form-control" id="InputWord_5" name=word_5>
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-secondary">Go!</button>
+        </form>
+        <br>
+        <br>
+        <br>アクセス日時：{{entry.created_at}}
+        
+{% endblock %}

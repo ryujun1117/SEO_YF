@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Get Google Result TOP100!!!</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src = "https://code.jquery.com/jquery-3.2.1.slim.min.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/lib/popper.js/1.12.9/umd/popper.min.js"></script>
+<scripts src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></scripts>
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" type="text/css">
+<link rel =stylesheet href="{{url_for('static', filename='style.css')}}"
+
+<div class ="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{url_for('show_entry')}}">
+            Get Google Results TOP100!!!
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="blog-body">
+        {% block body %}{% endblock %}
+    </div>
+</div>

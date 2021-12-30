@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<body>
+    {{ entry }}
+    <p>※ダウンロード前にブラウザを更新してください。</p>
+
+    <br>
+    <br>
+    <div class="btn-group">
+        <form action="{{url_for('download_api', id=entry.id)}}" method="get">
+            <button type="submit" class="btn btn-secondary">DownLoad!!</button>
+        </form>
+    </div>
+    <br>
+    <br>
+</body>
+
+
+{% endblock %}
